@@ -14,7 +14,7 @@ const App = () => {
         type="text"
         name="firstname"
         id="1"
-        {...register("FirstName", { required: true, maxLength: 100 })}
+        {...register("FirstName", { required: true, minLength: 2, maxLength: 25 })}
       />
       {errors.FirstName && <p>Valid first name is required.</p>}
       <label>Last name</label>
@@ -22,7 +22,7 @@ const App = () => {
         type="text"
         name="lastname"
         id="2"
-        {...register("LastName", { required: true, maxLength: 100 })}
+        {...register("LastName", { required: true, minLength: 2, maxLength: 25 })}
       />
       {errors.LastName && <p>Valid last name is required.</p>}
       <label>Email</label>
@@ -43,8 +43,8 @@ const App = () => {
         id="4"
         {...register("MobileNumber", {
           required: true,
-          maxLength: 15,
-          minLength: 5
+          maxLength: 12,
+          minLength: 8
         })}
       />
       {errors.MobileNumber && <p>Valid mobile number is required.</p>}
