@@ -1,25 +1,57 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react'
+import { useForm } from 'react-hook-form'
+
+import "./App.css"
 
 const App = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => alert(JSON.stringify(data));
+  const { register, handleSubmit, formState: { errors }} = useForm()
+  const onSubmit = (data) => alert(JSON.stringify(data))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('firstName', { required: true })} />
-      {errors.firstName && <p>First name is required.</p>}
-      <input {...register('lastName', { required: true })} />
-      {errors.lastName && <p>Last name is required.</p>}
-      <input {...register('age', { pattern: /\d+/ })} />
-      {errors.age && <p>Please enter number for age.</p>}
-      <input type="submit" />
+      <label>First name</label>
+      <input
+        type="text"
+        name="firstname"
+        id="1"
+        {...register("FirstName", { required: true, maxLength: 100 })}
+      />
+      {errors.FirstName && <p>Valid first name is required.</p>}
+      <label>Last name</label>
+      <input
+        type="text"
+        name="lastname"
+        id="2"
+        {...register("LastName", { required: true, maxLength: 100 })}
+      />
+      {errors.LastName && <p>Valid last name is required.</p>}
+      <label>Email</label>
+      <input
+        type="text"
+        name="email"
+        id="3"
+        {...register("Email", {
+          required: true,
+          pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        })}
+      />
+      {errors.Email && <p>Valid email is required.</p>}
+      <label>Mobile number</label>
+      <input
+        type="tel"
+        name="mobilenumber"
+        id="4"
+        {...register("MobileNumber", {
+          required: true,
+          maxLength: 15,
+          minLength: 5
+        })}
+      />
+      {errors.MobileNumber && <p>Valid mobile number is required.</p>}
+
+      <input type="submit" name="submitbutton" id="99" />
     </form>
-  );
+  )
 }
 
-export default App;
+export default App

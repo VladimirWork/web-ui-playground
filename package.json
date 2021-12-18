@@ -2,7 +2,7 @@
   "name": "web-ui-playground",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://VladimirWork.github.io/web-ui-playground",
+  "homepage": "http://vladimirwork.github.io/web-ui-playground",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
