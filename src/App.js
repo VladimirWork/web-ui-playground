@@ -7,11 +7,12 @@ const App = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => alert(JSON.stringify(data));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('firstName')} />
+      <input {...register('firstName', { required: true })} />
+      {errors.firstName && <p>First name is required.</p>}
       <input {...register('lastName', { required: true })} />
       {errors.lastName && <p>Last name is required.</p>}
       <input {...register('age', { pattern: /\d+/ })} />
