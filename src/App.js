@@ -9,6 +9,7 @@ const App = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+
       <label>First name</label>
       <input
         type="text"
@@ -17,6 +18,7 @@ const App = () => {
         {...register("FirstName", { required: true, minLength: 2, maxLength: 25 })}
       />
       {errors.FirstName && <p>Valid first name is required.</p>}
+
       <label>Last name</label>
       <input
         type="text"
@@ -25,6 +27,7 @@ const App = () => {
         {...register("LastName", { required: true, minLength: 2, maxLength: 25 })}
       />
       {errors.LastName && <p>Valid last name is required.</p>}
+
       <label>Email</label>
       <input
         type="text"
@@ -36,6 +39,7 @@ const App = () => {
         })}
       />
       {errors.Email && <p>Valid email is required.</p>}
+
       <label>Mobile number</label>
       <input
         type="tel"
@@ -49,7 +53,7 @@ const App = () => {
       />
       {errors.MobileNumber && <p>Valid mobile number is required.</p>}
 
-      <input type="submit" name="submitbutton" id="99" />
+      <input type="submit" value="submit" name="submitbutton" id="99" />
     </form>
   )
 }
