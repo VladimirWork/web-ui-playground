@@ -26,6 +26,13 @@ h1 {
 
 p {
   color: #e01212;
+  text-align: left;
+}
+
+div {
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
 }
 
 p::before {
@@ -56,7 +63,7 @@ label {
 }
 
 input[type="submit"] {
-  background: #2cc4c4;
+  background: #7dd1d1;
   color: white;
   text-transform: uppercase;
   border: none;

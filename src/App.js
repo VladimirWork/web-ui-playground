@@ -40,18 +40,47 @@ const App = () => {
       />
       {errors.Email && <p>Valid email is required.</p>}
 
-      <label>Mobile number</label>
+      <label>Phone number</label>
       <input
         type="tel"
-        name="mobilenumber"
+        name="phonenumber"
         id="4"
-        {...register("MobileNumber", {
+        {...register("PhoneNumber", {
           required: true,
           maxLength: 12,
-          minLength: 8
+          minLength: 7,
+          pattern: /^\d+$/
         })}
       />
-      {errors.MobileNumber && <p>Valid mobile number is required.</p>}
+      {errors.PhoneNumber && <p>Valid phone number is required.</p>}
+
+      <label>Gender</label>
+        <div>
+          &nbsp;&nbsp;M
+          <input
+          type="radio"
+          value="Male"
+          {...register("Gender", { required: true })}
+          />
+        </div>
+        <div>
+          &nbsp;&nbsp;F
+          <input
+          type="radio"
+          value="Female"
+          {...register("Gender", { required: true })}
+          />
+        </div>
+      {errors.Gender && <p>Choose your gender.</p>}
+
+      <label>I agree to the processing of personal data</label>
+      <input
+        type="checkbox"
+        name="agreement"
+        id="5"
+        {...register("Agreement", { required: true })}
+      />
+      {errors.Agreement && <p>You must agree to the processing of personal data.</p>}
 
       <input type="submit" value="submit" name="submitbutton" id="99" />
     </form>
