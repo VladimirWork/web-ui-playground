@@ -73,6 +73,17 @@ const App = () => {
         </div>
       {errors.Gender && <p>Choose your gender.</p>}
 
+      <label>Vacancy</label>
+      <select {...register("Vacancy")}>
+        <option value="QA Engineer">QA Engineer</option>
+        <option value="QAA Engineer">QAA Engineer</option>
+        <option value="Business Analyst">Business Analyst</option>
+      </select>
+
+      <label for="myfile">Your CV:</label>
+      <input {...register("CV", { required: true })} type="file" id="myfile" name="myfile"/>
+      {errors.CV && <p>Attach your CV file.</p>}
+
       <label>I agree to the processing of personal data</label>
       <input
         type="checkbox"
